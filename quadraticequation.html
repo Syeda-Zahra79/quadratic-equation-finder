@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadratic Equation Finder</title>
+</head>
+<body>
+    <section>
+      <div class="container">
+          <div class="input-all">
+               <label for="a1">a :</label>
+               <input type="number" id="a1">
+               <label for="b2">b :</label>
+               <input type="number" id="b2">
+               <label for="c3">c :</label>
+               <input type="number" id="c3">
+         </div>
+         <button class="find-btn">Click to find the roots</button>
+         <div> 
+             <label for="">root 1 :</label> <p class="root-1"></p>
+            
+             <label for="">root 2 :</label>
+             <p class="root-2"></p>
+         </div> 
+     </div>
+    </section>
+    <script>
+        //Declaring variable
+        const a = document.getElementById("a1");
+        const b = document.getElementById("b2");
+        const c = document.getElementById("c3");
+        const button = document.querySelector(".find-btn");
+
+
+        //Event : Button Click
+        button.addEventListener('click', () => {
+           const aString = a.value;
+           const bString = b.value;
+           const cString = c.value;
+           const aNum = parseInt(aString);
+           const bNum = parseInt(bString);
+           const cNum = parseInt(cString);
+          // console.log(aNum,bNum,cNum);
+          const disc = bNum * bNum - 4 * aNum * cNum;
+         // console.log(disc);
+          const rootOne = ((-bNum) + Math.sqrt(disc)) / (2 * aNum);
+          document.querySelector('.root-1').textContent = rootOne;
+          const rootTwo = ((-bNum) - Math.sqrt(disc)) / (2 * aNum);
+          document.querySelector('.root-2').textContent = rootTwo;
+         // console.log(rootOne);
+        //   console.log(2 * aNum);
+        //   console.log(Math.sqrt(disc));
+        //   console.log(-bNum);
+        //   console.log(ansroot1);
+        });
+    </script>
+</body>
+</html>
